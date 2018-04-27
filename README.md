@@ -43,7 +43,7 @@ The processed hald image can then be used as a filter for a very accurate
 approximation of that target color transformation.
 
 A resulting hald image could then be used in various software such as
-GraphicsMagick or Adobe Photoshop (with some plugins) and converted to the
+GraphicsMagick or Adobe Photoshop and converted to the
 3D LUT cube file format, which is common in a great number of video editing
 software.
 
@@ -55,6 +55,7 @@ used for manipulations.
 For example, vignetting, scratches, gradients, and watermarks can not be captured.
 It also might be wrong when different filters are applied to different parts of
 a single image.
+
 
 ## Requirements
 
@@ -70,6 +71,7 @@ $ pip install -r requirements.txt
 The resulting hald images can be applied to any visuals in your application
 using GraphicsMagick bindings for Python, Ruby, PHP, JavaScript, and other
 programming languages or using CLI. No software from this repository is required.
+
 
 ## Guide
 
