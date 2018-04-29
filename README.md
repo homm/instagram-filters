@@ -1,11 +1,11 @@
-# Accurate Instagram Filters Reconstruction
+# Accurate Image Filters Reconstruction
 
 There's a bunch of apps out there (e.g., Instagram) allowing you to apply color filters to images.
 You might be interested in cloning their behavior: reconstruct them. This
 repository holds tools for semi-automatically and very accurately reconstructing
 color filters.
 
-The truth is folks like Instagram filters. They are trying to
+The truth is folks like filters. They are trying to
 [reproduce](https://github.com/girliemac/Filterous)
 them [again](https://github.com/girliemac/filterous-2)
 and [again](https://github.com/acoomans/instagram-filters).
@@ -13,11 +13,12 @@ And [again](https://github.com/lukexyz/CV-Instagram-Filters)
 and [again](https://www.practicepython.org/blog/2016/12/20/instagram-filters-python.html).
 And [again](https://code.tutsplus.com/tutorials/create-instagram-filters-with-php--net-24504)
 and [again](https://picturepan2.github.io/instagram.css/).
+
 The problem with the attempts is they mostly deal with manually correcting
 colors.
+While, there's just a single robust method of color reconstruction.
 
-This is the only accurate reconstruction of color filters using a robust method.
-For instance, one of the following images was obtained using Instagram filter,
+For instance, one of the following images was obtained using a commercial filter,
 and another using an accurate reconstruction. Try guessing which one was
 reconstructed.
 
@@ -33,11 +34,11 @@ a commercial set of Instagram-like filters.
 
 ## How it works
 
-This method is based on
+The accurate color reconstruction method is based on
 [three-dimensional lookup tables][wiki-luts] and their two-dimensional
 representation: [hald images][hald-image].
 The core idea is simple: a sample hald image with a uniform color distribution
-is processed using any target software with an unknown color
+is processed using any target software color filter with an unknown
 transformation algorithm.
 The processed hald image can then be used as a filter for a very accurate
 approximation of that target color transformation.
@@ -69,13 +70,13 @@ $ pip install -r requirements.txt
 ```
 
 The resulting hald images can be applied to any visuals in your application
-using GraphicsMagick bindings for Python, Ruby, PHP, JavaScript™, and other
+using GraphicsMagick bindings for Python, Ruby, PHP, JavaScript, and other
 programming languages or using CLI. No software from this repository is required.
 
 
 ## Guide
 
-1. First, you'll need to create the identity image. Just run:
+1. First, you'll need to create the identity image. Just run run:
 
     ```bash
     $ ./bin/generate.py
@@ -93,7 +94,7 @@ programming languages or using CLI. No software from this repository is required
     scratches, gradients, and JPEG artifacts.
 
 2. Process the identity image with a target software you prefer.
-    Speaking of Instagram, you need to transfer the identity
+    Speaking of mobile apps and their filters, you need to transfer the identity
     image to your device and post that image with one of the filters applied.
     After that, you'll see filtered identity image in your camera roll.
     Well, just transfer it back.
@@ -127,7 +128,6 @@ programming languages or using CLI. No software from this repository is required
 
 While the default parameters provide you with high-quality hald filters,
 there are some cases where it is not enough.
-
 If the target filter has heavy distortions on the local level or significant
 gradients in the center of an image, some undesired effects may occur.
 The most noticeable one is color banding. This is an original image and the one
@@ -145,7 +145,7 @@ $ gm convert girl.jpg -hald-clut halds/15.Hudson.png girl.15.jpg
 You can notice that in the processed image many objects look flat and posterized:
 face, hair, chairs in the background.
 While posterization is one of the common image filters, it is not a part of the
-Hudson filter.
+Hudson-like filter.
 
 If you thoroughly look at the
 [image with a Hudson-like filter applied](./raw/15.Hudson.jpg),
