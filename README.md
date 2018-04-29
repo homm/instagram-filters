@@ -15,7 +15,8 @@ And [again](https://code.tutsplus.com/tutorials/create-instagram-filters-with-ph
 and [again](https://picturepan2.github.io/instagram.css/).
 
 The problem with the attempts is they mostly deal with manually correcting
-colors. While, there's just a single robust method of color reconstruction.
+colors.
+While, there's just a single robust method of color reconstruction.
 
 For instance, one of the following images was obtained using a commercial filter,
 and another using an accurate reconstruction. Try guessing which one was
